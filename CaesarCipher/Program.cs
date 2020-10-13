@@ -6,7 +6,7 @@ namespace CaesarCipher
     {
         static void Main(string[] args)
         {
-            char[] alphabet = new char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+            char[] alphabet = new char[] { 'z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a' };
 
             Console.WriteLine("Enter your secret word!");
             string input = Console.ReadLine();
@@ -18,7 +18,7 @@ namespace CaesarCipher
             {
                 char letter = secretMessage[i];
                 int letterPosition = Array.IndexOf(alphabet, letter);
-                int newLetterPosition = (letterPosition + 3) % 26;
+                int newLetterPosition = (letterPosition * 3) % 26;
                 char letterEncoded = alphabet[newLetterPosition];
                 encryptedMessage[i] = letterEncoded;
             }
